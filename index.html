@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Chotuu Babyyy 💗</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:'DM Sans',sans-serif;
+    color:#34344a;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at 10% 20%,rgba(255,255,255,.9) 0 35px,transparent 36px),
+        radial-gradient(circle at 90% 75%,rgba(255,255,255,.8) 0 45px,transparent 46px),
+        linear-gradient(135deg,#fff9f5,#eaf7ff,#fff0f7);
+}
+
+/* floating hearts */
+
+body:before{
+    content:"♡   ♥   ♡   ♥   ♡   ♥   ♡";
+    position:fixed;
+    top:12px;
+    left:0;
+    width:100%;
+    text-align:center;
+    color:#f19abd;
+    font-size:24px;
+    letter-spacing:10px;
+    opacity:.55;
+    z-index:0;
+    pointer-events:none;
+}
+
+/* PAGE */
+
+.page{
+    display:none;
+    min-height:100vh;
+    padding:55px 18px;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    z-index:1;
+}
+
+.page.active{
+    display:flex;
+}
+
+/* CARD */
+
+.card{
+    width:min(92vw,650px);
+    padding:42px 28px;
+    border-radius:32px;
+
+    background:rgba(255,255,255,.76);
+    border:1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 20px 60px rgba(80,90,130,.15),
+        inset 0 0 25px rgba(255,255,255,.4);
+
+    backdrop-filter:blur(12px);
+
+    animation:appear .65s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(18px) scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* HEADINGS */
+
+h1,h2{
+    font-family:'Playfair Display',serif;
+    color:#c92f72;
+}
+
+h1{
+    font-size:clamp(38px,9vw,62px);
+    margin:12px 0;
+}
+
+h2{
+    font-size:clamp(31px,7vw,46px);
+    margin:10px 0 20px;
+}
+
+p{
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* HEART */
+
+.heart{
+    font-size:75px;
+    animation:float 2.5s ease-in-out infinite;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* BUTTONS */
+
+button{
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:17px;
+    font-weight:600;
+    padding:15px 27px;
+    border-radius:999px;
+    margin:8px;
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-3px) scale(1.02);
+}
+
+.primary{
+    color:white;
+    background:linear-gradient(135deg,#ed579d,#d72e79);
+    box-shadow:0 8px 20px rgba(215,46,121,.25);
+}
+
+.secondary{
+    background:white;
+    color:#c82f72;
+    border:2px solid #efb4cd;
+}
+
+/* NO MESSAGE */
+
+.response{
+    min-height:60px;
+    margin:20px 0;
+    color:#c82f72;
+    font-weight:600;
+    font-size:19px;
+}
+
+/* DOODLE */
+
+.crying{
+    font-size:80px;
+    margin:10px;
+    animation:cry 1.5s ease-in-out infinite;
+}
+
+@keyframes cry{
+    50%{
+        transform:translateY(-5px) rotate(-3deg);
+    }
+}
+
+/* THIS OR THAT */
+
+.choice-box{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin:15px 0 28px;
+}
+
+.choice{
+    width:42%;
+    min-width:145px;
+    background:rgba(255,255,255,.9);
+    color:#45455a;
+    border:2px solid #efdce7;
+}
+
+.choice.selected{
+    background:#ed579d;
+    color:white;
+    border-color:#ed579d;
+}
+
+/* BOUQUET */
+
+.bubu{
+    font-size:90px;
+    margin:8px;
+    animation:float 2.5s infinite;
+}
+
+.flowers{
+    font-size:48px;
+    margin:5px;
+}
+
+/* PHOTO PAGE */
+
+.photo-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin:25px 0;
+}
+
+.photo-card{
+    background:white;
+    padding:10px;
+    border-radius:22px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transform:rotate(-1deg);
+}
+
+.photo-card:nth-child(even){
+    transform:rotate(1deg);
+}
+
+.photo-card img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:16px;
+    display:block;
+}
+
+.photo-caption{
+    color:#c82f72;
+    font-family:'Playfair Display',serif;
+    font-size:15px;
+    padding:10px 4px 5px;
+}
+
+/* HEART GAME */
+
+.big-heart{
+    font-size:105px;
+    cursor:pointer;
+    user-select:none;
+    transition:transform .18s;
+}
+
+.big-heart:active{
+    transform:scale(1.3);
+}
+
+.progress{
+    width:100%;
+    height:13px;
+    border-radius:20px;
+    background:#e7e7ee;
+    overflow:hidden;
+    margin:25px 0;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#f18bb7,#d72e79);
+    transition:.25s;
+}
+
+/* FINAL */
+
+.final-message{
+    text-align:left;
+    background:rgba(255,255,255,.55);
+    padding:24px;
+    border-radius:25px;
+    font-size:17px;
+}
+
+.final-message p{
+    margin:0 0 18px;
+}
+
+.mwah{
+    font-size:35px;
+    color:#d72e79;
+    font-family:'Playfair Display',serif;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .card{
+        padding:35px 18px;
+    }
+
+    .choice{
+        width:90%;
+    }
+
+    .photo-grid{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .photo-caption{
+        font-size:12px;
+    }
+
+    .final-message{
+        font-size:15px;
+        padding:18px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================================================= -->
+<!-- PAGE 1 : INTRO -->
+<!-- ================================================= -->
+
+<section class="page active" id="page1">
+
+<div class="card">
+
+    <div class="heart">💗</div>
+
+    <h1>
+        Helloo Chotuu<br>
+        Babbiee 😚💋
+    </h1>
+
+    <p>
+        I have a surprise for youuu... 🥹🎀
+    </p>
+
+    <p>
+        Do u want it? 👀💗
+    </p>
+
+    <button class="primary" onclick="showPage(2)">
+        Yes 🥺💗
+    </button>
+
+    <button class="secondary" onclick="surpriseNo()">
+        No 🙄
+    </button>
+
+    <div id="surpriseResponse" class="response"></div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- PAGE 2 : DO YOU LOVE ME -->
+<!-- ================================================= -->
+
+<section class="page" id="page2">
+
+<div class="card">
+
+    <div class="heart">🥺💗</div>
+
+    <h2>
+        Do u lovee me?
+    </h2>
+
+    <p>
+        Be honesttt... 👀
+    </p>
+
+    <button class="primary" onclick="loveYes()">
+        Yesss 💗
+    </button>
+
+    <button class="secondary" onclick="loveNo()">
+        No 😭
+    </button>
+
+    <div id="loveResponse" class="response"></div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- PAGE 3 : CRYING RESPONSE -->
+<!-- ================================================= -->
+
+<section class="page" id="page3">
+
+<div class="card">
+
+    <div class="crying">
+        🥺😭
+    </div>
+
+    <h2>
+        Rula diya mujhee 😭
+    </h2>
+
+    <p>
+        How could you say noooo 😭💔
+    </p>
+
+    <p>
+        Think again, misterrr 👀🎀
+    </p>
+
+    <button class="primary" onclick="showPage(2)">
+        Okay okay, ask me again 💗
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- PAGE 4 : THIS OR THAT -->
+<!-- ================================================= -->
+
+<section class="page" id="page4">
+
+<div class="card">
+
+    <div class="heart">🌷</div>
+
+    <h2>
+        This or That 💗
+    </h2>
+
+    <p>
+        Okayyy babyyy, choose carefullyyy 👀🎀
+    </p>
+
+
+    <!-- BEACH / MOUNTAINS -->
+
+    <p><b>🌊 Beach or Mountains? 🏔️</b></p>
+
+    <div class="choice-box">
+
+        <button class="choice" onclick="selectChoice(this,'Beach 🌊')">
+            Beach 🌊
+        </button>
+
+        <button class="choice" onclick="selectChoice(this,'Mountains 🏔️')">
+            Mountains 🏔️
+        </button>
+
+    </div>
+
+
+    <!-- ICE CREAM / CHOCOLATE -->
+
+    <p><b>🍦 Ice cream or Chocolates? 🍫</b></p>
+
+    <div class="choice-box">
+
+        <button class="choice" onclick="selectChoice(this,'Ice cream 🍦')">
+            Ice cream 🍦
+        </button>
+
+        <button class="choice" onclick="selectChoice(this,'Chocolates 🍫')">
+            Chocolates 🍫
+        </button>
+
+    </div>
+
+
+    <!-- CUDDLING / KISSING -->
+
+    <p><b>🫂 Cuddling or Kissing? 💋</b></p>
+
+    <div class="choice-box">
+
+        <button class="choice" onclick="selectChoice(this,'Cuddling 🫂')">
+            Cuddling 🫂
+        </button>
+
+        <button class="choice" onclick="selectChoice(this,'Kissing 💋')">
+            Kissing 💋
+        </button>
+
+    </div>
+
+
+    <!-- CARS / BIKES -->
+
+    <p><b>🚗 Cars or Bikes? 🏍️</b></p>
+
+    <div class="choice-box">
+
+        <button class="choice" onclick="selectChoice(this,'Cars 🚗')">
+            Cars 🚗
+        </button>
+
+        <button class="choice" onclick="selectChoice(this,'Bikes 🏍️')">
+            Bikes 🏍️
+        </button>
+
+    </div>
+
+
+    <!-- WALK / DRIVE -->
+
+    <p><b>🌙 Late night walk or Late night drive? 🚗</b></p>
+
+    <div class="choice-box">
+
+        <button class="choice" onclick="selectChoice(this,'Late night walk 🌙')">
+            Late night walk 🌙
+        </button>
+
+        <button class="choice" onclick="selectChoice(this,'Late night drive 🚗')">
+            Late night drive 🚗
+        </button>
+
+    </div>
+
+
+    <div id="choiceResponse" class="response"></div>
+
+    <button class="primary" onclick="showPage(5)">
+        Next → 💗
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- PAGE 5 : BOUQUET -->
+<!-- ================================================= -->
+
+<section class="page" id="page5">
+
+<div class="card">
+
+    <div class="bubu">
+        🧸🤍
+    </div>
+
+    <div class="flowers">
+        💐🌷🌸
+    </div>
+
+    <h2>
+        Will u accept my bouquet? 🌷
+    </h2>
+
+    <p>
+        I picked these just for youuu 🥹🎀
+    </p>
+
+    <button class="primary" onclick="bouquetYes()">
+        Yesss 💗
+    </button>
+
+    <button class="secondary" onclick="bouquetNo()">
+        No 😭
+    </button>
+
+    <div id="bouquetResponse" class="response"></div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- PAGE 6 : HAPPY BOYFRIEND DAY + PHOTOS -->
+<!-- ================================================= -->
+
+<section class="page" id="page6">
+
+<div class="card">
+
+    <div class="heart">
+        🎀💗🎀
+    </div>
+
+    <h2>
+        Awww Babbyy<br>
+        Sweetiee Piee 🥹💗
+    </h2>
+
+    <h1>
+        Happy<br>
+        Boyfriend Dayyy! 🎀💗
+    </h1>
+
+    <p>
+        Look at my cuttuu babyyy 🥹🫂
+    </p>
+
+
+    <div class="photo-grid">
+
+        <div class="photo-card">
+
+            <img src="photo1.jpg" alt="Our memory">
+
+            <div class="photo-caption">
+                My favourite memory 🥹💗
+            </div>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img src="photo2.jpg" alt="My favourite picture">
+
+            <div class="photo-caption">
+                Look at youuu 🥺🎀
+            </div>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img src="photo3.jpg" alt="Favourite moment">
+
+            <div class="photo-caption">
+                My handsome babyyy 🫶🏻
+            </div>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img src="photo4.jpg" alt="Our favourite moment">
+
+            <div class="photo-caption">
+                Forever my cutieee 💗
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button class="primary" onclick="showPage(7)">
+        One last thing... 💌
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- PAGE 7 : HEART -->
+<!-- ================================================= -->
+
+<section class="page" id="page7">
+
+<div class="card">
+
+    <h2>
+        One last thing... 🥹
+    </h2>
+
+    <p>
+        Click the heart until it's full of loveee 💗
+    </p>
+
+    <div
+        class="big-heart"
+        id="bigHeart"
+        onclick="fillHeart()"
+    >
+        🤍
+    </div>
+
+    <div class="progress">
+
+        <div
+            class="progress-bar"
+            id="heartBar"
+        ></div>
+
+    </div>
+
+    <div
+        id="heartPercent"
+        class="response"
+    >
+        0% 💗
+    </div>
+
+    <button
+        class="primary"
+        id="messageButton"
+        onclick="showPage(8)"
+        style="display:none;"
+    >
+        Read my message 💌
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- PAGE 8 : FINAL MESSAGE -->
+<!-- ================================================= -->
+
+<section class="page" id="page8">
+
+<div class="card">
+
+    <div class="heart">
+        💗🥹🎀
+    </div>
+
+    <h2>
+        Happy Boyfriend Dayyy<br>
+        My Cuttuu Babyyy 🥹💗
+    </h2>
+
+
+    <div class="final-message">
+
+        <p>
+            <b>Happy Boyfriend Dayyy to my cuttuu babyyy 🥹🎀💗🫂</b>
+        </p>
+
+
+        <p>
+            Pata hai, hum kitnaaa ladte hain 😭😭 kabhi kabhi toh
+            lagta hai hum dono ka main kaam hi ek dusre se ladna hai
+            😭🤦🏻‍♀️ but sach bolu toh, inn saari fights ke beech bhi
+            I never want to hurt youuu 🥺💗 You’re genuinely such a
+            sweet, adorable and precious person to me 🫂🫶🏻
+        </p>
+
+
+        <p>
+            And omggg your eyes??? 😭👉🏻👈🏻 Those eyes, those lashes,
+            that smileee, your personalityyy… literally EVERYTHING
+            about you is so adorableee 😭🎀💗 I swear, jitna bhi
+            bolu na, sab kam hi lagta hai. 🥹🫂
+        </p>
+
+
+        <p>
+            It’s only been 4 months, but somehow you’ve become one
+            of the most important people in my life, no doubt about
+            that. 🥺💗 And I reallyyy don’t want to leave youuu.
+            I just want you to stay with me, handle my nakhre,
+            meri bakbak, meri mood swings aur meri faltu ki fights
+            😭🫂🎀 because I’m obviously going to annoy youuu,
+            irritate youuu and pareshan youuu foreverrr 😭😈💗
+        </p>
+
+
+        <p>
+            And haan!!! Aapko mujhe chatpati chizein bhi khilani
+            thiiii 😤🌶️🌸 Aap bhul rahe hooo!! Aap mujhe khilaoge
+            na toh mai bahuttt khush rahungi 😭🎀🫶🏻 phir shayad
+            ladungi bhi nahi… thodi der ke liye 🤭😂💗
+        </p>
+
+
+        <p>
+            I just want you to know that I’ll always loveee youuu
+            so muchhh 🥹💗🫂 No matter how much we fight, you’ll
+            always be my cuttuu babyyy. 🥺🎀 Please bas aise hi
+            mere saath rehna, mujhe handle karna aur mujhe kabhi
+            akela mat chhodnaaa 🫂💗
+        </p>
+
+
+        <p>
+            You’re stuck with me now hehe 😈🎀💋
+        </p>
+
+
+        <p>
+            I loveee youuu sooooo muchhhh, my adorable babyyy
+            😭💗🧿🫂🎀
+        </p>
+
+
+        <p>
+            <b>
+                Happy Boyfriend Dayyy, cutieee 😚🫶🏻💗
+            </b>
+        </p>
+
+
+        <p class="mwah">
+            *mwahhh* 💋🥺👉🏻👈🏻🎀
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+/* ================================================= */
+/* PAGE NAVIGATION */
+/* ================================================= */
+
+function showPage(number){
+
+    document
+        .querySelectorAll('.page')
+        .forEach(function(page){
+
+            page.classList.remove('active');
+
+        });
+
+    document
+        .getElementById('page' + number)
+        .classList.add('active');
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+}
+
+
+/* ================================================= */
+/* SURPRISE NO */
+/* ================================================= */
+
+function surpriseNo(){
+
+    document
+        .getElementById('surpriseResponse')
+        .innerHTML =
+        "Haaww glt baatt 😭😂 Try againnn! 💗";
+
+}
+
+
+/* ================================================= */
+/* LOVE YES */
+/* ================================================= */
+
+function loveYes(){
+
+    document
+        .getElementById('loveResponse')
+        .innerHTML =
+        "Heheee I knew ittt 🥹💗";
+
+    setTimeout(function(){
+
+        showPage(4);
+
+    },900);
+
+}
+
+
+/* ================================================= */
+/* LOVE NO */
+/* ================================================= */
+
+function loveNo(){
+
+    showPage(3);
+
+}
+
+
+/* ================================================= */
+/* THIS OR THAT */
+/* ================================================= */
+
+function selectChoice(button,choice){
+
+    button
+        .parentElement
+        .querySelectorAll('.choice')
+        .forEach(function(btn){
+
+            btn.classList.remove('selected');
+
+        });
+
+    button.classList.add('selected');
+
+    document
+        .getElementById('choiceResponse')
+        .innerHTML =
+        "Awww okayyy... " + choice + " 🥹💗";
+
+}
+
+
+/* ================================================= */
+/* BOUQUET YES */
+/* ================================================= */
+
+function bouquetYes(){
+
+    document
+        .getElementById('bouquetResponse')
+        .innerHTML =
+        "Awww babbyy sweetiee piee 🥹🌷💗";
+
+    setTimeout(function(){
+
+        showPage(6);
+
+    },1300);
+
+}
+
+
+/* ================================================= */
+/* BOUQUET NO */
+/* ================================================= */
+
+function bouquetNo(){
+
+    document
+        .getElementById('bouquetResponse')
+        .innerHTML =
+        "U make me upset 😭💔";
+
+}
+
+
+/* ================================================= */
+/* HEART FILL */
+/* ================================================= */
+
+let heartProgress = 0;
+
+function fillHeart(){
+
+    if(heartProgress >= 100){
+
+        return;
+
+    }
+
+    heartProgress += 10;
+
+    document
+        .getElementById('heartBar')
+        .style.width =
+        heartProgress + "%";
+
+
+    document
+        .getElementById('heartPercent')
+        .innerHTML =
+        heartProgress + "% 💗";
+
+
+    if(heartProgress >= 100){
+
+        document
+            .getElementById('bigHeart')
+            .innerHTML =
+            "❤️";
+
+        document
+            .getElementById('heartPercent')
+            .innerHTML =
+            "My heart is full of loveee 🥹💗";
+
+        document
+            .getElementById('messageButton')
+            .style.display =
+            "inline-block";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
